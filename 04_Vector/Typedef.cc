@@ -6,6 +6,7 @@
 // typedef std::vector<std::vector<int>> Matrix;
 
 // using AliasName = Type;
+// using ist besser als typedef
 using Vector = std::vector<int>;
 using Matrix = std::vector<std::vector<int>>;
 

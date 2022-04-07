@@ -1,10 +1,9 @@
 #include <iostream>
 
-// Enum values are integers
-// Enum values in UPPERCASE
-// Enum values are constant
+// Endliche anzahl an Kategorien(Diskrete zustaende) darzustellen, enum sind konstante werte (CAPS)
+// Enum value are integers
 
-enum PermissionLevel
+enum PermissionLevel // Arbeitet wie ein neuer eigener Datentyp
 {
     STUDENT = 1,
     TUTOR = 2,

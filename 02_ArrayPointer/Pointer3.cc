@@ -1,25 +1,34 @@
 #include <iostream>
 
+//Wichtig: wenn zwei pointer auf a zeigen und einer der pointer die value aendert, aendert sich dieses auf bei dem anderen pointer!!
+
+void print_int_pointer(int *p)
+{
+    std::cout << "Deref " << *p << " Ref: " << p << " Pointer Address " << &p << std::endl;
+}
+
+void print_double_pointer(double *p)
+{
+    std::cout << "Deref " << *p << " Ref: " << p << " Pointer Address " << &p << std::endl;
+}
+
 int main()
 {
-    // Heap allocation
-    int *p_zahl = new int{4};
+    int a = 1337;
+    double b = -13.37;
 
-    // Heap de-allocation
-    delete p_zahl;
+    int *c = &a;
 
-    // The memory adress of the heap variable, where the pointer the points to
-    std::cout << p_zahl << std::endl;
+    print_int_pointer(c);
 
-    p_zahl = nullptr;
+    *c -= 10;
+    print_int_pointer(c);
 
-    // The memory adress of the heap variable, where the pointer the points to
-    std::cout << p_zahl << std::endl;
+    int *d = &a;
+    print_int_pointer(d);
 
-    if (p_zahl != nullptr)
-    {
-        std::cout << *p_zahl << std::endl;
-    }
+    *c += 10;
+    print_int_pointer(d);
 
     return 0;
 }

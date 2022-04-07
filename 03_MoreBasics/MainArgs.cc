@@ -2,10 +2,11 @@
 #include <iostream>
 
 // Argc: Argument Count
-// Argv: Argument Values
+// Argc: Argument Values
+
 int main(int argc, char **argv)
 {
-    for (int i = 0; i < argc; i++)
+    for (int i = 0; i < argc; ++i)
     {
         std::cout << argv[i] << std::endl;
     }
@@ -15,8 +16,8 @@ int main(int argc, char **argv)
         const char *arg1 = argv[1];
         std::cout << arg1 << std::endl;
 
-        int arg2 = std::atoi(argv[2]);
-        std::cout << arg2 << std::endl;
+        // int arg2 = std::atoi(argv[2]);
+        // std::cout << arg1 << std::endl;
     }
 
     return 0;

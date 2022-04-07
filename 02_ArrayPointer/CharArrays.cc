@@ -2,9 +2,9 @@
 
 int main()
 {
-    char fist_name[] = {'J', 'a', 'n', '\0'};
+    char first_name[] = {'J', 'a', 'n', '\0'};
 
-    std::cout << fist_name << std::endl;
+    std::cout << first_name << std::endl;
 
     char last_name[] = "Schaffranek";
 

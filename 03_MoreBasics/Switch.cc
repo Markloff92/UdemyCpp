@@ -1,10 +1,9 @@
 #include <iostream>
 
-// Enum values are integers
-// Enum values in UPPERCASE
-// Enum values are constant
+// Endliche anzahl an Kategorien(Diskrete zustaende) darzustellen, enum sind konstante werte (CAPS)
+// Enum value are integers
 
-enum PermissionLevel
+enum PermissionLevel //Arbeitet wie ein neuer eigener Datentyp
 {
     STUDENT = 1,
     TUTOR = 2,
@@ -13,59 +12,35 @@ enum PermissionLevel
     UNKNOWN = 5
 };
 
-void greet_permission_level_if(const PermissionLevel level)
+void greet_permission_level_switch(PermissionLevel level)
 {
-    if (level == PermissionLevel::STUDENT)
+    switch (level) // variable nach der wir abfragen
+    {
+    case PermissionLevel::STUDENT:
     {
         std::cout << "Hello STUDENT" << std::endl;
+        break;
     }
-    else if (level == PermissionLevel::TUTOR)
+    case PermissionLevel::TUTOR:
     {
         std::cout << "Hello TUTOR" << std::endl;
+        break;
     }
-    else if (level == PermissionLevel::INSTRUCTOR)
+    case PermissionLevel::INSTRUCTOR:
     {
         std::cout << "Hello INSTRUCTOR" << std::endl;
+        break;
     }
-    else if (level == PermissionLevel::ADMIN)
+    case PermissionLevel::ADMIN:
     {
         std::cout << "Hello ADMIN" << std::endl;
+        break;
     }
-    else
+    default:
     {
-        std::cout << "UNKNOWN! Error!" << std::endl;
+        std::cout << "UNKOWN! ERROR!" << std::endl;
+        break;
     }
-}
-
-void greet_permission_level_switch(const PermissionLevel level)
-{
-    switch (level)
-    {
-        case PermissionLevel::STUDENT:
-        {
-            std::cout << "Hello STUDENT" << std::endl;
-            break;
-        }
-        case PermissionLevel::TUTOR:
-        {
-            std::cout << "Hello TUTOR" << std::endl;
-            break;
-        }
-        case PermissionLevel::INSTRUCTOR:
-        {
-            std::cout << "Hello INSTRUCTOR" << std::endl;
-            break;
-        }
-        case PermissionLevel::ADMIN:
-        {
-            std::cout << "Hello ADMIN" << std::endl;
-            break;
-        }
-        default:
-        {
-            std::cout << "UNKNOWN! Error!" << std::endl;
-            break;
-        }
     }
 }
 
@@ -75,7 +50,6 @@ int main()
     greet_permission_level_switch(permission_level_jan);
 
     PermissionLevel permission_level_peter = PermissionLevel::STUDENT;
-    greet_permission_level_if(permission_level_peter);
 
     return 0;
 }

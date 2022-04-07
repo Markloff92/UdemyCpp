@@ -1,6 +1,6 @@
 #include <iostream>
 
-// dType varName[numElements]
+//dType varName [numElements]
 
 int main()
 {

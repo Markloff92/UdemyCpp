@@ -1,5 +1,7 @@
 #include <iostream>
 
+//Function Overload bedeutet selbe funktion mit unterschiedlichen uebergabe parametern.
+
 int max(const int &a, const int &b)
 {
     if (a < b)

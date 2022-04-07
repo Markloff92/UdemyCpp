@@ -1,23 +1,31 @@
 #include <iostream>
 
+
 int main()
 {
-    // Heap allocation
-    int *p = new int;
-    *p = 4;
+    //Heap allocation
 
-    std::cout << "Memory address of p: " << &p << std::endl;                     // 0xc38
-    std::cout << "Memory address of pointed value: " << p << std::endl;          // 0x440
-    std::cout << "Value of the memory address p points to: " << *p << std::endl; // 4
+    int *p = new int{4};
+    //*p = 4;
 
-    *p = 1337;
+    std::cout << "memory address of p: " << &p << std::endl;
+    std::cout << "memory address of pointed value: " << p << std::endl;
+    std::cout << "Value of the memory address p points to: " << *p << std::endl;
 
-    std::cout << "Memory address of p: " << &p << std::endl;                     // 0xc38
-    std::cout << "Memory address of pointed value: " << p << std::endl;          // 0x440
-    std::cout << "Value of the memory address p points to: " << *p << std::endl; // 4
+    //Heap de-allocation
 
-    // Heap de-allocation
     delete p;
+
+    std::cout << p << std::endl;
+
+    p = nullptr; // nullptr wichtig nach der delete angabe!
+
+    std::cout << p << std::endl;
+
+    if (p != nullptr)
+    {
+        std::cout << *p << std::endl;
+    }
 
     return 0;
 }

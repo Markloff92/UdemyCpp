@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+//Matrix ausgeben mit matrix.size() und in 2.te for schleife matrix[i].size()
+
 void print_matrix(const std::vector<std::vector<int>> &matrix)
 {
     for (std::size_t i = 0; i < matrix.size(); i++)
@@ -18,7 +20,7 @@ int main()
     const std::size_t num_rows = 3;
     const std::size_t num_cols = 2;
 
-    // int array[num_rows][num_cols] = {{0, 1,}, {2, 3}, {4, 5}};
+    int array[num_rows][num_cols] = {{0, 1}, {2, 3}, {4, 5}};
 
     std::vector<std::vector<int>> matrix(num_rows, std::vector<int>(num_cols, 0));
     print_matrix(matrix);

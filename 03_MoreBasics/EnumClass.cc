@@ -1,8 +1,9 @@
 #include <iostream>
 
-// 1.) Two Enums cannot share the same names
-// 2.) No varaible can have a name which already reserved by an enum
+// 1.) Two Enums can not share the same names
+// 2.) No variable can have a name already reserved by an enum
 // 3.) Enums are not type safe
+// Enum Class ist dafür da, das man Namen doppelt haben kann. (namescope angeben)
 
 enum class PermissionLevel
 {
@@ -22,9 +23,6 @@ int main()
 {
     PermissionLevel permission_level_jan = PermissionLevel::INSTRUCTOR;
     PermissionLevel permission_level_peter = PermissionLevel::STUDENT;
-
-    ExamPerson jan = ExamPerson::INSTRUCTOR;
-    ExamPerson peter = ExamPerson::STUDENT;
 
     return 0;
 }

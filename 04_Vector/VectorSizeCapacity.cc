@@ -1,11 +1,14 @@
 #include <iostream>
 #include <vector>
 
+// Einmal bisschen mehr Capacity als Size, da Heap Allocation langsam ist.
+// d.h. Capacity mehr anlegen als Size damit push_back mit einkalkuliert
+
 int main()
 {
     std::vector<int> my_vector;
 
-    for (int i = 0; i < 9; i++)
+    for (std::size_t i = 0; i < 10; i++)
     {
         my_vector.push_back(i);
     }
