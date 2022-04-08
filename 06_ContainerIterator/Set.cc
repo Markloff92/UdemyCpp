@@ -4,9 +4,11 @@
 #include <string>
 #include <utility>
 
+// Set(Menge)
+
 void print_set(const std::set<std::string> &set)
 {
-    for (const auto &val : set)
+    for (const auto &val : set) // for-each loop funktioniert fuer jeden container
     {
         std::cout << val << std::endl;
     }
@@ -16,17 +18,17 @@ void print_set(const std::set<std::string> &set)
 
 int main()
 {
-    std::set<std::string> math_course;
+    std::set<std::string> math_course; // so anlegen
 
-    math_course.insert("Jan");
+    math_course.insert("Jan"); // ein Element hinzufuegen
     math_course.insert("Dennis");
     math_course.insert("Peter");
 
     print_set(math_course);
 
-    std::set<std::string> coding_course;
+    std::set<std::string> coding_course; // so anlegen
 
-    coding_course.insert("Jan");
+    coding_course.insert("Jan"); // ein Element anlegen
     coding_course.insert("Nina");
     coding_course.insert("Mats");
 
@@ -34,8 +36,8 @@ int main()
 
     // Set Union
     std::cout << "Union: " << std::endl;
-    std::set<std::string> students_union;
-    std::set_union(math_course.begin(),
+    std::set<std::string> students_union; // Neue Menge
+    std::set_union(math_course.begin(),   // Vereinigung alle zusammenfuegen
                    math_course.end(),
                    coding_course.begin(),
                    coding_course.end(),
@@ -43,7 +45,7 @@ int main()
     print_set(students_union);
 
     // Set Intersection
-    std::cout << "Intersection: " << std::endl;
+    std::cout << "Intersection: " << std::endl; // Schnittmenge ( es bleibt nur Jan)
     std::set<std::string> students_intersection;
     std::set_intersection(math_course.begin(),
                           math_course.end(),
@@ -53,7 +55,7 @@ int main()
     print_set(students_intersection);
 
     // Set Difference
-    std::cout << "Difference: " << std::endl;
+    std::cout << "Difference: " << std::endl; // ueberschneidung
     std::set<std::string> students_difference;
     std::set_difference(math_course.begin(),
                         math_course.end(),

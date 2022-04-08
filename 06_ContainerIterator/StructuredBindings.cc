@@ -3,6 +3,9 @@
 #include <string>
 #include <tuple>
 
+// mehrere werte aus funktion returnen:
+// z.B. mit einem tupel, das beinhaltet ja 3 oder mehr werte
+
 void get_data_old(int &a, std::string &b, double &c)
 {
     a = 1337;
@@ -25,6 +28,9 @@ int main()
     std::cout << a << std::endl;
     std::cout << b << std::endl;
     std::cout << c << std::endl;
+
+    // tupel returnen nicht so cool, deswegen ein structed binding
+    // wir ENTtupeln das damit:
 
     const auto [id, name, score] = get_data();
     std::cout << id << std::endl;

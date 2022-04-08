@@ -10,10 +10,10 @@ std::string get_oldest_friend(const Friends &friends)
 
     for (const auto &val : friends)
     {
-        std::pair<int, int> p = val.second;
+        std::pair<int, int> p = val.second; // mit.second greift man auf das std::pair<int, int> zu
 
-        if (p.first > oldest_age)
-        {
+        if (p.first > oldest_age) // std::pair<int, int> wird dann in p geschoben, sodass man auf p wieder .first/second
+        {                         // anwenden kann.
             oldest_age = p.first;
             oldest_friend = val.first;
         }

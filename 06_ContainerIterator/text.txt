@@ -1,0 +1,29 @@
+Container:
+
+Unterschied von std::array, std::Vector
+
+std::vector Vorteil, insertion und depletion. ( einfuegen und entfernen)
+std::array dort nicht!
+
+
+Vector: Ein Container der ja unter der Haube ein dynamisches Array, was man dynamisch erweitern kann
+    sowie der automatisch speicher auf Heap reserviert. sodass man das nicht manuell machen muss.
+
+Strings: Koennte man auch noch zu den Containern hinzuzaehlen, sind ja prinzipell Zeichenketten.
+
+Moechte ich an meinen Datensatz etwas anfügen, einfügen oder entfernen, dann gibt es bessere Methoden als
+    Vectoren. Andere Container!
+
+Std::Array klassen gibt es z.b., dass ist NICHT ein C-style Array.
+
+doubly-linked list:
+    Wenn man Anforderungen hat öfters Elemente zu entfernen oder anzufügen etc, nimmt man am besten eine Liste!
+    hier werden Daten anders abgespeichert sodass sie gut ist zum elemente entfernen und anfügen, ABER langsame Laufzeiten
+    wenn man auf Daten zugreifen moechte.
+
+Associative container:
+
+set:
+
+
+map:

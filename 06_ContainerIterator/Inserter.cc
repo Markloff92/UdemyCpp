@@ -28,6 +28,7 @@ int main()
 
     std::vector<int> my_vector4;
 
+    // WENN man es immer ans Ende packen moechte!
     // Back Inserter (Container needs the push_back method)
     std::copy(my_vector.begin(), my_vector.end(), std::back_inserter(my_vector4));
 
