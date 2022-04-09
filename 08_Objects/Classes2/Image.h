@@ -1,7 +1,7 @@
 #include <vector>
 
 using uchar = unsigned char;
-using GrayscaleMatrix = std::vector<std::vector<uchar>>;
+using GrayscaleMatrix = std::vector<std::vector<uchar>>; // 2D vektor erstellen
 
 class Image
 {
