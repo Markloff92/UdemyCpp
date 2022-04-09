@@ -27,3 +27,17 @@ set:
 
 
 map:
+
+Klassen und Objekte:
+
+Klassen sind sowas wie std::vector std::list
+
+Klassen können Variablen haben diese nennen sich dann  Attribute oder Membervariablen.
+Klassen können auch FUnktionen haben, diese nennen sich Methoden, das sind Funktionen innerhalb einer Klasse.
+    Objekte sind dann die wirklich erstellten Variablen einer Klasse, z.B. my_vector wäre ein Objekt dieser Klasse
+
+Eine Klasse bildet einen Namespace
+Erstellung eines Objektes der Klasse mit dem Konstruktor
+Zerstörung eines Objektes der Klasse mit dem Destruktors
+
+Objekte sind es dann wenn man eine variable von dieser klasse erstellt

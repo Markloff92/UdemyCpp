@@ -1,8 +1,10 @@
+#include <algorithm>
 #include <iostream>
+#include <numeric>
 #include <random>
 #include <vector>
-#include <algorithm>
-#include <numeric>
+
+// std::transform werte aus container, veraendern und in einen 2 container abspeichern. hier mit vector, geht aber mit allen.
 
 int increment(int i)
 {
@@ -32,10 +34,17 @@ int main()
     std::iota(my_vector1.begin(), my_vector1.end(), 0);
     print_vector(my_vector1);
 
-    std::transform(my_vector1.begin(), my_vector1.end(), my_vector2.begin(), increment);
+    std::transform(my_vector1.begin(),
+                   my_vector1.end(),
+                   my_vector2.begin(),
+                   increment); // wo anfang/ende, wo anfang abgespeichert, funktionsobjekt siehe Zeile 9
     print_vector(my_vector2);
 
-    std::transform(my_vector1.begin(), my_vector1.end(), my_vector2.begin(), my_vector3.begin(), add);
+    std::transform(my_vector1.begin(),
+                   my_vector1.end(),
+                   my_vector2.begin(),
+                   my_vector3.begin(),
+                   add); // fuer den Fall 3x Vectoren selbe wie Zeile 40 nur mit 2x anfang wo abgespeichert werden soll.
     print_vector(my_vector3);
 
     return 0;

@@ -1,8 +1,10 @@
+#include <algorithm>
 #include <iostream>
+#include <numeric>
 #include <random>
 #include <vector>
-#include <algorithm>
-#include <numeric>
+
+// AccumulTE  oeFTER VERWENDET ALS REDUCE
 
 void print_vector(const std::vector<int> &my_vector)
 {
@@ -32,7 +34,7 @@ int main()
     std::iota(my_vector1.begin(), my_vector1.end(), 1);
     print_vector(my_vector1);
 
-    auto result1 = std::accumulate(my_vector1.begin(), my_vector1.end(), 0);
+    auto result1 = std::accumulate(my_vector1.begin(), my_vector1.end(), 0); //init ist hier '0'
     std::cout << result1 << std::endl;
 
     auto result2 = std::accumulate(my_vector1.begin(), my_vector1.end(), 0, adder);

@@ -1,21 +1,23 @@
+#include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <random>
 #include <vector>
-#include <chrono>
-#include <algorithm>
+
+// std::generate, werte in einen container abspeichern
 
 using ClockType = std::chrono::steady_clock;
 using ClockRes = std::chrono::microseconds;
 
 constexpr std::size_t NUM_ELEMENTS = 1'000'000;
 
-int gen()
+int gen() // Funktion wird 1 Million mal aufgerufen, es reicht ja nur 1 Mal, deswegen static hier sodass nur 1 mal. used
 {
     static std::random_device seed_generator{};
     static std::mt19937_64 random_generator{seed_generator()};
     static std::uniform_int_distribution<int> random_distribution{-10, 10};
 
-    return random_distribution(random_generator);
+    return random_distribution(random_generator); // Zufallszahlen bestimmen und ausgeben
 }
 
 int main()
@@ -24,7 +26,7 @@ int main()
 
     auto start_time = ClockType::now();
 
-    std::generate(my_vector.begin(), my_vector.end(), gen);
+    std::generate(my_vector.begin(), my_vector.end(), gen); // anstelle for() schleife, mit std::generate
 
     auto end_time = ClockType::now();
 

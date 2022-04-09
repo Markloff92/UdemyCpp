@@ -1,8 +1,11 @@
+#include <algorithm>
 #include <iostream>
+#include <numeric>
 #include <random>
 #include <vector>
-#include <algorithm>
-#include <numeric>
+
+// std::reduce, range von einem container angeben, mit berechnungvorschrift ganzen container runterbrechen auf eine zahl
+// ,je nach berechnungsvorschrift, summieren, multiplizieren usw.
 
 void print_vector(const std::vector<int> &my_vector)
 {
@@ -22,10 +25,10 @@ int main()
     std::iota(my_vector1.begin(), my_vector1.end(), 0);
     print_vector(my_vector1);
 
-    auto result1 = std::reduce(my_vector1.begin(), my_vector1.end());
+    auto result1 = std::reduce(my_vector1.begin(), my_vector1.end()); // per Default wird Summiert
     std::cout << result1 << std::endl;
 
-    auto result2 = std::reduce(my_vector1.begin(), my_vector1.end(), 2);
+    auto result2 = std::reduce(my_vector1.begin(), my_vector1.end(), 2); //hier mit einem Offset von 2
     std::cout << result2 << std::endl;
 
     return 0;

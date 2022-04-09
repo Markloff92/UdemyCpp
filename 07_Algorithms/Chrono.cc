@@ -1,7 +1,10 @@
+#include <chrono>
 #include <iostream>
 #include <random>
 #include <vector>
-#include <chrono>
+
+// std tempory libary date and time ultilities
+// std::chrono libary
 
 using ClockType = std::chrono::steady_clock;
 using ClockRes = std::chrono::microseconds;
@@ -16,15 +19,16 @@ int main()
     std::mt19937_64 random_generator{seed_generator()};
     std::uniform_int_distribution<int> random_distribution{-10, 10};
 
-    auto start_time = ClockType::now();
+    auto start_time = ClockType::now(); // fuer den aktuellen Zeitpunkt, std::chrono::steady_clock::now() (alternative)
 
     for (std::size_t i = 0; i < NUM_ELEMENTS; i++)
     {
         my_vector[i] = random_distribution(random_generator);
     }
 
-    auto end_time = ClockType::now();
+    auto end_time = ClockType::now(); //aktuellen zeitpunkt auch hier wie Zeile 22, sodass start von end abziehen.
 
+    // hier gibt es einen duration_cast<auf miliseconds> von (end-start) time .count();
     auto elapsed_time_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count();
     auto elapsed_time_us = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count();
     auto elapsed_time_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(end_time - start_time).count();

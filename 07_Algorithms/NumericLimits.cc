@@ -3,6 +3,8 @@
 #include <limits>
 #include <vector>
 
+// max oder min von datentypen
+
 template <typename T>
 void print_min_max()
 {
@@ -33,15 +35,18 @@ int main()
     std::cout << d1 << std::endl;
     std::cout << d2 << std::endl;
 
-    std::cout.precision(17);
+    std::cout.precision(17); // Genauigkeit setzen
 
     std::cout << d1 << std::endl;
     std::cout << d2 << std::endl;
 
     std::cout << "d1 == d2? " << std::boolalpha << equal(d1, d2) << std::endl;
 
-    std::cout << "epsilon = " << std::numeric_limits<double>::epsilon() << std::endl;
+    std::cout << "epsilon = " << std::numeric_limits<double>::epsilon() << std::endl; // epsilon ausgeben
     std::cout << "d1 ~= d2? " << std::boolalpha << almost_equal(d1, d2) << std::endl;
+
+    // wenn man floating auf gleicheit pruefen will, funktioniert das nicht wirklich
+    // stattdessen lieber auf ungefaehr gleich pruefen.
 
     return 0;
 }
