@@ -2,6 +2,8 @@
 // public: kann man von außen sehen, kann man außerhalb der klasse aufrufen
 // private: nicht außerhalb aufrufbar
 
+
+// Erstellen der Klasse und prototypen der methoden
 class Image // class definieren danach name {};
 {
 public:

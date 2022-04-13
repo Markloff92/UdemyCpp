@@ -21,6 +21,12 @@ Image::~Image()
     std::cout << "Image object destroyed!" << std::endl;
 }
 
+// Warum benutzt man jetzt get_...() oder set_...()? wenn man beides nutzt wie hier
+// macht es wenig sinn da man sonst direkt haette die membervariablen public setzen koennen
+// fuer den fall das man nur write oder read dieser variablen moechte ist eine der
+// funktionen genau richtig
+
+
 unsigned int Image::get_width() const
 {
     return m_width;
