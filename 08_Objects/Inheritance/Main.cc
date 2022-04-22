@@ -3,6 +3,9 @@
 
 #include "Animal.h"
 
+// Man beachte hier die eigenen gesetzten SCOPES {}, sind wichtig um zu sehen wann der Constructor durchlaufen wird
+// und wann der Deconstructor durchlaufen wird, naemlich immer dann wenn der SCOPE zuende ist.
+
 int main()
 {
     {

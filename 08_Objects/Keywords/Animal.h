@@ -6,7 +6,9 @@
 class Animal
 {
 public:
-    Animal() = default;
+    Animal() = default; // um dem compiler selbst den code des konstruktors erstellen zu lassen. also bei string { }
+                        // bei int = 0, double = 0.0 usw, bei Pointern sollte man das nicht machen.
+                        // bei = delete; sagt man dem compiler das er gar kein fall code erstellen soll
 
     Animal(const std::string &name) : m_name(name)
     {
@@ -29,7 +31,7 @@ private:
     const std::string m_name;
 };
 
-class Dog : public Animal
+class Dog : public Animal // Vererbung
 {
 public:
     Dog(const std::string &name) : Animal(name)
@@ -42,6 +44,7 @@ public:
         std::cout << "Dog Destructor!" << std::endl;
     }
 
+    // final gibt an das keine kinderklasse diese virtuelle Funktion nochmal neu definieren kann.
     void my_favourite_food() final
     {
         std::cout << "Meat" << std::endl;

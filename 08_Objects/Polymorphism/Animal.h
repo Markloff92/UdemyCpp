@@ -3,6 +3,10 @@
 #include <iostream>
 #include <string>
 
+// Polymorphismus bedeutet ich moechte eine Funktion haben die fuer beide classen gilt
+// virtuelle funktionen liegen in elternklasse vor, sodass wenn man etwas von dog reingibt wuerde er uber override
+// die richtige funktion suchen
+
 class Animal
 {
 public:
@@ -16,7 +20,7 @@ public:
         std::cout << "Animal Destructor!" << std::endl;
     }
 
-    virtual void my_favourite_food()
+    virtual void my_favourite_food() // virtual hier in baseclass um in DOG class dann override zu schreiben
     {
         std::cout << "Salad" << std::endl;
     }
@@ -38,7 +42,7 @@ public:
         std::cout << "Dog Destructor!" << std::endl;
     }
 
-    void my_favourite_food() override
+    void my_favourite_food() override // hier override um zu ueberschreiben, compiler anweisen das funktion exisitiert
     {
         std::cout << "Meat" << std::endl;
     }

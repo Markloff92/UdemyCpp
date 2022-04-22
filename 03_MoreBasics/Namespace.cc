@@ -4,7 +4,7 @@
 
 
 namespace ad // Man kann alles hier auslagern als namespace ad
-{            // Muss aber dann alle namen mit 'ad:: ' (SCOPE) versehen siehe MAIN()
+{            // Muss aber dann alle namen mit 'ad:: ' versehen siehe MAIN()
 constexpr int DEFAULT_VEHICLE_ID = -1;
 constexpr int NUM_VEHICLES = 3;
 
@@ -31,7 +31,7 @@ void print_vehicle_data(Vehicle &vehicle)
 
     switch (vehicle.lane)
     {
-    case Lane::CENTER_LANE: //SCOPE alles was '::'
+    case Lane::CENTER_LANE:
     {
         std::cout << "Vehicle Lane Association: Center Lane" << std::endl;
         break;

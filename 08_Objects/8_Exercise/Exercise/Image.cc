@@ -34,21 +34,44 @@ unsigned int Image::get_height() const
 // Exercise 1
 void Image::clear_image()
 {
+    for (auto &val : m_matrix)
+    {
+        std::fill(val.begin(), val.end(), 0);
+    }
+    m_height = 0;
+    m_width = 0;
 }
 
 // Exercise 2
 void Image::set_pixel(const unsigned int x, const unsigned int y, const uchar value)
 {
+    m_matrix[x][y] = value;
 }
 
 // Exercise 3
 void Image::resize_image(const unsigned int new_width, const unsigned int new_height)
 {
+    if (new_width != m_width)
+    {
+        m_matrix.resize(new_width);
+        m_width = new_width;
+    }
+
+    for (auto &column : m_matrix)
+    {
+        column.resize(new_height);
+    }
+
+    m_height = new_height;
 }
 
 // Exercise 4
 void Image::fill_image(const uchar value)
 {
+    for (auto &val : m_matrix)
+    {
+        std::fill(val.begin(), val.end(), value);
+    }
 }
 
 // Exercise 5
